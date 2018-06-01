@@ -2,22 +2,39 @@ import React, { Component } from 'react';
 import { Home } from './Home';
 
 export class Emotion extends Component {
-	constructor(){
-		super()
+	constructor(props){
+		super(props)
+	}
+
+	emotionPicker() {
+		let emotionalRendering;
+		console.log("this is this.props.emotionInput ", this.props.emotionInput)
+		if (this.props.emotionInput == "Verypositive") {
+			emotionalRendering = <input id="happy" type="radio" name="smiley" defaultValue="Happy" checked={true}/>
+			console.log("Emotion component will choose happy face")
+		} else if (this.props.emotionInput == "Positive") {
+			emotionalRendering = <input id="happy" type="radio" name="smiley" defaultValue="Happy" checked={true}/>
+			console.log("Emotion component will choose happy face")
+		} else if (this.props.emotionInput == "Negative") {
+			emotionalRendering = <input id="angry" type="radio" name="smiley" defaultValue="Angry" checked={true}/>
+			console.log("Emotion component will choose mad face")
+		} else if (this.props.emotionInput == "Neutral") {
+			emotionalRendering = <input id="normal" type="radio" name="smiley" defaultValue="Normal" checked={true}/>
+			console.log("Emotion component will choose neutral face")
+		} else if (this.props.emotionInput == "Verynegative") {
+			emotionalRendering = <input id="furious" type="radio" name="smiley" defaultValue="Furious" checked={true}/>
+			console.log("Emotion component will choose furious mad face")
+		} else {
+			console.log("Emotion cannot be chosen, incorrect input")
+		}
+		return emotionalRendering;
 	}
 
 	render(){
 		return(
 			<div>
 				<br/><br/><br/><br/>
-		        <input id="happy" type="radio" name="smiley" defaultValue="Happy" />
-		        <label htmlFor="happy">:)</label>
-		        <input id="normal" type="radio" name="smiley" defaultValue="Normal" />
-		        <label htmlFor="normal">:|</label>
-		        <input id="angry" type="radio" name="smiley" defaultValue="Angry" />
-		        <label htmlFor="angry">:(</label>
-		        <input id="furious" type="radio" name="smiley" defaultValue="Furious" />
-		        <label htmlFor="furious">:&lt;</label>
+				{this.emotionPicker()}
 		        <div className="smiley">
 		          <div className="steam-container">
 		            <div className="squiggle-container squiggle-container-1">

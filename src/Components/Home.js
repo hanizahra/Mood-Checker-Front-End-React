@@ -13,6 +13,7 @@ class Home extends Component {
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.child = React.createRef();
 	}
 
 	componentDidMount() {
@@ -34,8 +35,9 @@ class Home extends Component {
 			this.setState({
 				apiOutput: mood.data.output
 			})
-			console.log("this is mood ", mood.data.output)
-			console.log('aaaand this is apiOutput ', this.state.apiOutput)
+			console.log("this is mood ", mood.data.output);
+			console.log('aaaand this is apiOutput ', this.state.apiOutput);
+			this.child.current.emotionPicker();
 		})
 		.catch(err => {
 			console.log("This is the error ", err)
@@ -44,15 +46,16 @@ class Home extends Component {
 
 
 	render(){
-
+		// let apiOutput = this.state.apiOutput;
 
 		return(
+
 			<div>
 				<h1>Mood Checker</h1>
 				<Link className="link" to ="/detail">Detail</Link>
 				<Link to ="/pastmoods">Past Moods</Link>
 				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-				<Emotion />
+				<Emotion emotionInput={this.state.apiOutput} ref={this.child} />
 				<form onSubmit={this.handleSubmit}>
 				  <label>
 				    <p>What's on your mind?</p>
@@ -60,6 +63,7 @@ class Home extends Component {
 				  </label>
 				  <input type="submit" value="Submit" />
 				</form>
+				<h3>You're mood is {this.state.apiOutput}</h3>
 			</div>
 		)
 	}
