@@ -39,6 +39,7 @@ class Home extends Component {
 			emotionObject['userInput'] = this.state.userInput;
 			emotionObject['apiOutput'] = this.state.apiOutput[0];
 			console.log("this is emotionObject ", emotionObject);
+			Services.postMoodToDb();
 		})
 		.catch(err => {
 			console.log("This is the error ", err)
