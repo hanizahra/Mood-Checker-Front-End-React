@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import App from '../App';
 import {Link} from 'react-router-dom';
 
 class Detail extends Component {
-	constructor(){
-		super()
-	}
+	// constructor(){
+	// 	super()
+	// }
 
 	render(){
 		return(
