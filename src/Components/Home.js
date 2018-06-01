@@ -9,16 +9,13 @@ class Home extends Component {
 		super(props);
 		this.state = {
 			userInput: '',
-			apiOutput: 'test'
+			apiOutput: 'test',
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.child = React.createRef();
 	}
 
-	componentDidMount() {
-		
-	}
 
 	handleChange(e) {
 		this.setState({
@@ -33,11 +30,15 @@ class Home extends Component {
 		Services.getMood(this.state.userInput)
 		.then(mood => {
 			this.setState({
-				apiOutput: mood.data.output
+				apiOutput: mood.data.output,
 			})
 			console.log("this is mood ", mood.data.output);
 			console.log('aaaand this is apiOutput ', this.state.apiOutput);
 			this.child.current.emotionPicker();
+			let emotionObject = [];
+			emotionObject['userInput'] = this.state.userInput;
+			emotionObject['apiOutput'] = this.state.apiOutput[0];
+			console.log("this is emotionObject ", emotionObject);
 		})
 		.catch(err => {
 			console.log("This is the error ", err)
@@ -46,7 +47,6 @@ class Home extends Component {
 
 
 	render(){
-		// let apiOutput = this.state.apiOutput;
 
 		return(
 
