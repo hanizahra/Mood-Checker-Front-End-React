@@ -9,7 +9,7 @@ class Home extends Component {
 		super(props);
 		this.state = {
 			userInput: '',
-			apiOutput: 'test',
+			apiOutput: 'unknown',
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -45,6 +45,7 @@ class Home extends Component {
 			console.log("This is the error ", err)
 		})
 	}
+
 
 
 	render(){

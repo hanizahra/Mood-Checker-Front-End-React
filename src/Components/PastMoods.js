@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Services from '../Services';
+import { Emotion } from './Emotion';
 
 class PastMoods extends Component {
 	constructor(){
 		super()
 		this.state = {
-			moodData: []
+			moodData: [],
+			userInput: '',
+			apiOutput: 'test',
 		}
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleChange = this.handleChange.bind(this);
+		this.deleteAMood = this.deleteAMood.bind(this);
 	}
 
 	componentDidMount() {
@@ -24,12 +30,42 @@ class PastMoods extends Component {
 		
 	}
 
+	handleChange() {
+
+	}
+
+	handleSubmit() {
+
+	}
+
+	deleteAMood(i, e) {
+		return Services.deleteMood(i);
+	}
+
+
+
 	render(){
 
+
 		let allMoods = this.state.moodData;
+		
 		let mappedMoods = allMoods.map(function(mood) {
-			return mood['userInput']
-		})
+			console.log(`this is mood['id']---> `, mood['id'] );
+			return [<p key="1">User Input: {mood['userInput']}</p>, 
+			<p key="2">Api Output: {mood['apiOutput']}</p>,
+			<button onClick= {this.deleteAMood.bind(this, mood['id'])}>Delete</button>,
+			<form>
+			  <label>
+			    <input type="text" name="name" placeholder={mood['userInput']}/>
+			  </label><br/>
+			  <label>
+			    <input type="text" name="name" placeholder={mood['apiOutput']}/>
+			  </label><br/>
+			  <input type="submit" value="Submit"/>
+			</form>,
+			<br/>]
+		}, this)
+
 
 		return(
 			<div>

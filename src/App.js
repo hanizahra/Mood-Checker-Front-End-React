@@ -6,6 +6,12 @@ import PastMoods from './Components/PastMoods';
 import Detail from './Components/Detail';
 
 class App extends Component {
+  constructor() {
+    super();
+
+  }
+
+
   render() {
     return (
       <Router>

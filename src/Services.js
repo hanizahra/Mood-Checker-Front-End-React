@@ -2,7 +2,7 @@ import axios from 'axios';
 // import React, { Component } from 'react';
 // import Home from './Components/Home';
 
-const myData = {userInput: "ohh", apiOutput: "nooo"}
+const myData = {userInput: "basdfsa", apiOutput: "asdffd"}
 const Services = {
 
 	//// 3rd party API
@@ -38,6 +38,27 @@ const Services = {
 		return axios({
 			method: 'GET',
 			url: 'http://localhost:8080/moods'
+		})
+	},
+
+	getOneMood(id) {
+		return axios({
+			method: 'GET',
+			url: `http://localhost:8080/moods/${id}`
+		})
+	},
+
+	updateMood(id) {
+		return axios({
+			method: 'PUT',
+			url: `http://localhost:8080/moods/${id}`
+		})
+	},
+
+	deleteMood(id) {
+		return axios({
+			method: 'DELETE',
+			url: `http://localhost:8080/moods/${id}`
 		})
 	}
 }
