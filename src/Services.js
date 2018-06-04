@@ -1,6 +1,6 @@
 import axios from 'axios';
 // import React, { Component } from 'react';
-// import Home from './Components/Home';
+import Home from './Components/Home';
 
 const myData = {userInput: "basdfsa", apiOutput: "asdffd"}
 const Services = {
@@ -25,11 +25,11 @@ const Services = {
 
 
 	// posts moods to db
-	postMoodToDb() {
+	postMoodToDb(newData) {
 		return axios({
 			method: 'POST',
 			url: 'http://localhost:8080/moods',
-			data: myData
+			data: newData
 		})
 	},
 

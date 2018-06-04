@@ -39,7 +39,7 @@ class PastMoods extends Component {
 	}
 
 	deleteAMood(i, e) {
-		return Services.deleteMood(i);
+		Services.deleteMood(i);
 	}
 
 

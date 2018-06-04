@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Emotion } from './Emotion';
-// import axios from 'axios';
+import axios from 'axios';
 import Services from '../Services';
 
 class Home extends Component {
@@ -35,11 +35,17 @@ class Home extends Component {
 			console.log("this is mood ", mood.data.output);
 			console.log('aaaand this is apiOutput ', this.state.apiOutput);
 			this.child.current.emotionPicker();
-			let emotionObject = [];
+			let emotionObject = {};
 			emotionObject['userInput'] = this.state.userInput;
 			emotionObject['apiOutput'] = this.state.apiOutput[0];
 			console.log("this is emotionObject ", emotionObject);
-			Services.postMoodToDb();
+			Services.postMoodToDb(emotionObject)
+			.then(emotion => {
+				console.log("this emotion was posted ", emotion)
+			})
+			.catch(err => {
+				console.log("this emotion did not post: ", err)
+			})
 		})
 		.catch(err => {
 			console.log("This is the error ", err)
