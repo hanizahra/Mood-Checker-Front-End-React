@@ -17,6 +17,11 @@ class PastMoods extends Component {
 
 	// GET request to DB to retrieve all moods
 	componentDidMount() {
+		this.getTheMoods();
+		
+	}
+
+	getTheMoods() {
 		Services.getAllMoods()
 		.then( res => {
 			this.setState({
@@ -27,12 +32,14 @@ class PastMoods extends Component {
 		.catch( err => {
 			console.log("The error is ", err)
 		})
-		
 	}
 
 	// DELETE request to DB deletes single mood
 	deleteAMood(i, e) {
-		Services.deleteMood(i);
+		Services.deleteMood(i)
+		.then( () => {
+			this.getTheMoods()
+		})
 	}
 
 
