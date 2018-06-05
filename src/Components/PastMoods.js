@@ -14,6 +14,8 @@ class PastMoods extends Component {
 		this.deleteAMood = this.deleteAMood.bind(this);
 	}
 
+
+	// GET request to DB to retrieve all moods
 	componentDidMount() {
 		Services.getAllMoods()
 		.then( res => {
@@ -28,6 +30,7 @@ class PastMoods extends Component {
 		
 	}
 
+	// DELETE request to DB deletes single mood
 	deleteAMood(i, e) {
 		Services.deleteMood(i);
 	}

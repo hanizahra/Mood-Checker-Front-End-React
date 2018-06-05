@@ -60,7 +60,6 @@ body {
   min-height: 500px;
   background: #f5f5f5;
   text-align: center;
-/*  background-image: url("https://www.publicdomainpictures.net/pictures/40000/velka/blue-polka-dot-background.jpg"); */ 
   background-color: #42ADFE;
 }
 
@@ -79,20 +78,6 @@ p {
   margin-top: -130px;
 }
 
-/* Buttons */
-
-/*
-label
-{
-  background: #FFCD00;
-  border: 0;
-  color: #B57700;
-  padding: 15px;
-  min-width: 60px;
-  font-size: 18px;
-  font-weight: bold;
-  margin: 10px
-}*/
 
 a {
   text-decoration: none;

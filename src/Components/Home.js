@@ -10,6 +10,7 @@ class Home extends Component {
 		this.state = {
 			userInput: '',
 			apiOutput: 'unknown',
+			loading: false
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,13 +24,18 @@ class Home extends Component {
 		})
 	}
 
+	// POST request to 3rd party API to receive data
 	handleSubmit(e) {
 		e.preventDefault();
+		this.setState({
+			loading: true
+		})
 		console.log("This is the user's input: ", this.state.userInput)
 
 		Services.getMood(this.state.userInput)
 		.then(mood => {
 			this.setState({
+				loading: false,
 				apiOutput: mood.data.output,
 			})
 			console.log("this is mood ", mood.data.output);
@@ -56,6 +62,8 @@ class Home extends Component {
 
 	render(){
 
+		const loading = this.state.loading;
+
 		return(
 
 			<div>
@@ -76,6 +84,7 @@ class Home extends Component {
 				  <input className="inputButton" type="submit" value="Submit" />
 				</form>
 				<h3>Your mood is {this.state.apiOutput}</h3>
+				{loading ? <p>Loading...</p> : ''}
 			</div>
 		)
 	}

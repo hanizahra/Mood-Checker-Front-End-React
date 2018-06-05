@@ -7,6 +7,7 @@ export class Emotion extends Component {
 		super(props)
 	}
 
+	// matcheds 3rd party API output to CSS emotion
 	emotionPicker() {
 		let emotionalRendering;
 		console.log("this is this.props.emotionInput ", this.props.emotionInput)
