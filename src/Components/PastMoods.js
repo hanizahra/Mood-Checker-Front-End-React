@@ -11,8 +11,6 @@ class PastMoods extends Component {
 			userInput: '',
 			apiOutput: 'test',
 		}
-		this.handleSubmit = this.handleSubmit.bind(this);
-		this.handleChange = this.handleChange.bind(this);
 		this.deleteAMood = this.deleteAMood.bind(this);
 	}
 
@@ -30,14 +28,6 @@ class PastMoods extends Component {
 		
 	}
 
-	handleChange() {
-
-	}
-
-	handleSubmit() {
-
-	}
-
 	deleteAMood(i, e) {
 		Services.deleteMood(i);
 	}
@@ -53,6 +43,7 @@ class PastMoods extends Component {
 			console.log(`this is mood['id']---> `, mood['id'] );
 			return [<p key="1"><b>Thought:</b> {mood['userInput']}</p>, 
 			<p key="2"><b>State of mind:</b> {mood['apiOutput']}</p>,
+			<Link to = {`/detail/${mood['id']}`}><span><button>Details</button></span></Link>,
 			<button onClick= {this.deleteAMood.bind(this, mood['id'])}>Delete</button>,
 			<form>
 			  <label>
@@ -63,7 +54,8 @@ class PastMoods extends Component {
 			  </label><br/>
 			  <input type="submit" value="Submit"/>
 			</form>,
-			<br/>]
+			<br/>
+			]
 		}, this)
 
 
@@ -71,6 +63,7 @@ class PastMoods extends Component {
 			<div>
 				<h1>Mood Swings</h1>
 				<Link to = "/">Home</Link>
+				<br/><br/><br/><br/>
 				{mappedMoods}
 			</div>
 		)

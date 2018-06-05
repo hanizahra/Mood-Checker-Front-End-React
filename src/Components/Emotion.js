@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Home } from './Home';
+import { Detail } from './Detail';
 
 export class Emotion extends Component {
 	constructor(props){
@@ -33,7 +34,7 @@ export class Emotion extends Component {
 	render(){
 		return(
 			<div className = "face">
-				<br/><br/><br/><br/>
+				<br/><br/>
 				{this.emotionPicker()}
 		        <div className="smiley">
 		          <div className="steam-container">

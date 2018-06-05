@@ -24,7 +24,7 @@ h1 {
   text-align: center;
   font-family: 'Bowlby One SC', cursive;
   color: white;
-  text-shadow: 4px 4px #ff0000;
+  text-shadow: 4px 4px black;
 }
 
 form {
@@ -37,6 +37,14 @@ form {
   font-size: 60px;
 }
 
+.inputButton {
+  border-radius: 3px;
+}
+
+.inputButton:hover {
+  background-color: none;
+  color: red;
+}
 
 
 body, html {
@@ -106,8 +114,7 @@ a {
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(calc(-50% - 121px));
-/*  box-shadow: rgba(211, 165, 110, 0.498039) 0px 30px 30px 1px, rgb(245, 245, 245) 0px 20px 10px 1px;
-*/}
+}
 
 
 .mouth {
