@@ -48,11 +48,18 @@ const Services = {
 		})
 	},
 
-	updateMood(id) {
+	updateMood(id, userInput, apiOutput, note) {
 		return axios({
-			method: 'PUT',
-			url: `http://localhost:8080/moods/${id}`
+			method: 'PATCH',
+			url: `http://localhost:8080/moods/${id}`,
+			data: {
+				id: id,
+				userInput: userInput,
+				apiOutput: apiOutput,
+				note: note
+			}
 		})
+		console.log("id, note--> ", id, note)
 	},
 
 	deleteMood(id) {

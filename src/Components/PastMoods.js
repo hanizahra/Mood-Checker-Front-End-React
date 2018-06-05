@@ -45,15 +45,6 @@ class PastMoods extends Component {
 			<p key="2"><b>State of mind:</b> {mood['apiOutput']}</p>,
 			<Link to = {`/detail/${mood['id']}`}><span><button>Details</button></span></Link>,
 			<button onClick= {this.deleteAMood.bind(this, mood['id'])}>Delete</button>,
-			<form>
-			  <label>
-			    <input type="text" name="name" placeholder={mood['userInput']}/>
-			  </label><br/>
-			  <label>
-			    <input type="text" name="name" placeholder={mood['apiOutput']}/>
-			  </label><br/>
-			  <input type="submit" value="Submit"/>
-			</form>,
 			<br/>
 			]
 		}, this)
