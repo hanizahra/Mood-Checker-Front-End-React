@@ -11,9 +11,11 @@ class App extends Component {
 
   }
 
-
+  // <div style={{backgroundColor: "#F6BB42"}}>
   render() {
+    
     return (
+      <div>
       <Router>
         <Switch>
           <Route exact path='/pastmoods' component = {PastMoods}/>
@@ -21,6 +23,7 @@ class App extends Component {
           <Route exact path='/detail' component = {Detail}/>
         </Switch>
       </Router>
+      </div>
     );
   }
 }

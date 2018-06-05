@@ -32,7 +32,7 @@ export class Emotion extends Component {
 
 	render(){
 		return(
-			<div>
+			<div className = "face">
 				<br/><br/><br/><br/>
 				{this.emotionPicker()}
 		        <div className="smiley">

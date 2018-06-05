@@ -51,8 +51,8 @@ class PastMoods extends Component {
 		
 		let mappedMoods = allMoods.map(function(mood) {
 			console.log(`this is mood['id']---> `, mood['id'] );
-			return [<p key="1">User Input: {mood['userInput']}</p>, 
-			<p key="2">Api Output: {mood['apiOutput']}</p>,
+			return [<p key="1"><b>Thought:</b> {mood['userInput']}</p>, 
+			<p key="2"><b>State of mind:</b> {mood['apiOutput']}</p>,
 			<button onClick= {this.deleteAMood.bind(this, mood['id'])}>Delete</button>,
 			<form>
 			  <label>
@@ -69,7 +69,7 @@ class PastMoods extends Component {
 
 		return(
 			<div>
-				<h1>Past moods from database</h1>
+				<h1>Mood Swings</h1>
 				<Link to = "/">Home</Link>
 				{mappedMoods}
 			</div>

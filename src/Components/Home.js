@@ -59,19 +59,19 @@ class Home extends Component {
 		return(
 
 			<div>
-				<h1>Mood Checker</h1>
-				<Link className="link" to ="/detail">Detail</Link>
-				<Link to ="/pastmoods">Past Moods</Link>
+				<h1 className="mood-title">Mood Checker</h1>
+				<Link className="link" to ="/detail">Detail </Link>
+				<Link to ="/pastmoods"> Mood Swings</Link>
 				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 				<Emotion emotionInput={this.state.apiOutput} ref={this.child} />
-				<form onSubmit={this.handleSubmit}>
+				<form className="home-form" onSubmit={this.handleSubmit}>
 				  <label>
 				    <p>What's on your mind?</p>
 				    <input type="text" value={this.state.userInput} name="name" onChange={this.handleChange}/>
 				  </label>
 				  <input type="submit" value="Submit" />
 				</form>
-				<h3>You're mood is {this.state.apiOutput}</h3>
+				<h3>Your mood is {this.state.apiOutput}</h3>
 			</div>
 		)
 	}
