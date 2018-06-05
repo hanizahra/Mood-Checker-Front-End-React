@@ -44,6 +44,7 @@ class Detail extends Component {
 				<Link to = "/pastmoods"> Mood Swings</Link>
 				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 				<Emotion emotionInput={this.state.singleApiOutput} ref={this.child} />
+				<br/>
 				<p><b>Thought:</b> {singleUserInput} </p>
 				<p><b>State of mind:</b> {singleApiOutput} </p>
 			</div>
