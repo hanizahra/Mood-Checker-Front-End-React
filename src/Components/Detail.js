@@ -22,6 +22,10 @@ class Detail extends Component {
 	}
 
 	componentDidMount() {
+		this.getOneOfTheMoods();
+	}
+
+	getOneOfTheMoods() {
 		Services.getOneMood(this.props.match.params.id)
 		.then(oneMood => {
 			this.setState ({
@@ -31,6 +35,7 @@ class Detail extends Component {
 				singleNote: oneMood.data.note
 			})
 			this.child.current.emotionPicker();
+			this.componentDidMount();
 			console.log("this is userInput now ", this.state.singleMood.userInput)
 			console.log("this is apiOutput now ", this.state.singleMood.apiOutput)
 		})
