@@ -53,6 +53,19 @@ form {
   display: flex;
 }
 
+.details-info-parent {
+
+}
+
+.details-info-child {
+  margin: 10px;
+}
+
+#top-info-child {
+  margin-top: 55px;
+  text-align: center;
+}
+
 .mood-title {
   font-size: 60px;
 }
@@ -95,7 +108,11 @@ p {
 }
 
 .home-form {
-  margin-top: -130px;
+  margin-top: -180px;
+}
+
+.prompt {
+  margin-top: 10px;
 }
 
 
@@ -633,12 +650,12 @@ a {
 
   .prompt {
     font-size: 15px;
-    margin-top: -10px;
+    margin-top: -40px;
     align-self: center;
     text-align: center;
-    display: absolute;
+    display: relative;
     left: 50%;
-    margin-bottom: -12px;
+    margin-bottom: 10px;
   }
 
   .nav-text {
@@ -651,8 +668,19 @@ a {
 
   h3 {
     font-size: 15px;
-    margin-top: 10px;
+    margin-top: 20px;
   }
+
+  .home-form {
+    margin-top: 0px;
+
+  }
+
+  .homeinput {
+    margin: 15px;
+  }
+
+
 
 
 }

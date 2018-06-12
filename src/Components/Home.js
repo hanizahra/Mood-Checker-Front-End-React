@@ -74,17 +74,16 @@ class Home extends Component {
 				</div>
 				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 				<Emotion emotionInput={this.state.apiOutput} ref={this.child} />
-
-				<form className="home-form" onSubmit={this.handleSubmit}>
-				  <label>
-				  	<br/>
-				    <p className="prompt">What's on your mind?</p>
-				    <input type="text" value={this.state.userInput} name="name" onChange={this.handleChange}/>
-				  </label>
-				  <input className="inputButton" type="submit" value="Submit" />
-				</form>
-				<h3>Your mood is {this.state.apiOutput}</h3>
-				{loading ? <p>Loading...</p> : ''}
+					<form className="home-form" onSubmit={this.handleSubmit}>
+					  <label>
+					  	<br/>
+					    <p className="prompt">What's on your mind?</p>
+					    <input className="homeinput" type="text" value={this.state.userInput} name="name" onChange={this.handleChange}/>
+					  </label>
+					  <input className="inputButton" type="submit" value="Submit" />
+					</form>
+					<h3>Your mood is {this.state.apiOutput}</h3>
+					{loading ? <p>Loading...</p> : ''}
 			</div>
 		)
 	}

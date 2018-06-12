@@ -84,9 +84,11 @@ class Detail extends Component {
 				  <input className="details-child" id="details-button" type="submit" value="submit"/>
 				  </div>
 				</form>
-				<p><b>Thought:</b> {singleUserInput} </p>
-				<p><b>State of mind:</b> {singleApiOutput} </p>
-				<p><b>Note:</b> {singleNote} </p>
+				<div className="details-info-parent">
+					<p className="details-info-child" id="top-info-child"><b>Thought:</b> {singleUserInput} </p>
+					<p className="details-info-child"><b>State of mind:</b> {singleApiOutput} </p>
+					<p className="details-info-child"><b>Note:</b> {singleNote} </p>
+				</div>
 			</div>
 		)
 	}
