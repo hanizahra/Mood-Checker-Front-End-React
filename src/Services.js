@@ -27,7 +27,7 @@ const Services = {
 	postMoodToDb(newData) {
 		return axios({
 			method: 'POST',
-			url: 'http://localhost:8080/moods',
+			url: 'http://localhost:8080/moodchecker/moods',
 			data: newData
 		})
 	},
@@ -36,21 +36,21 @@ const Services = {
 	getAllMoods() {
 		return axios({
 			method: 'GET',
-			url: 'http://localhost:8080/moods'
+			url: 'http://localhost:8080/moodchecker/moods'
 		})
 	},
 
 	getOneMood(id) {
 		return axios({
 			method: 'GET',
-			url: `http://localhost:8080/moods/${id}`
+			url: `http://localhost:8080/moodchecker/moods/${id}`
 		})
 	},
 
 	updateMood(id, userInput, apiOutput, note) {
 		return axios({
 			method: 'PATCH',
-			url: `http://localhost:8080/moods/${id}`,
+			url: `http://localhost:8080/moodchecker/moods/${id}`,
 			data: {
 				id: id,
 				userInput: userInput,
@@ -64,7 +64,7 @@ const Services = {
 	deleteMood(id) {
 		return axios({
 			method: 'DELETE',
-			url: `http://localhost:8080/moods/${id}`
+			url: `http://localhost:8080/moodchecker/moods/${id}`
 		})
 	}
 }

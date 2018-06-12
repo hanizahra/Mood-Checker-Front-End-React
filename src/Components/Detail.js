@@ -76,11 +76,13 @@ class Detail extends Component {
 				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 				<Emotion emotionInput={this.state.singleApiOutput} ref={this.child} />
 				<br/><br/>
-				<form onSubmit={this.handleSubmitForm}>
-				  <label>
+				<form onSubmit={this.handleSubmitForm} className="details-form">
+				  <div className="details-parent">
+				  <label className="details-child">
 				    <input onChange={this.handleInputChange} type="text" name="note" placeholder={this.state.note}/>
 				  </label><br/>
-				  <input type="submit" value="submit"/>
+				  <input className="details-child" id="details-button" type="submit" value="submit"/>
+				  </div>
 				</form>
 				<p><b>Thought:</b> {singleUserInput} </p>
 				<p><b>State of mind:</b> {singleApiOutput} </p>

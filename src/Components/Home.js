@@ -69,8 +69,8 @@ class Home extends Component {
 			<div>
 				<h1 className="mood-title">Mood Checker</h1>
 				<div className="nav-bar">
-					<a href="https://deepai.org/api-docs/#sentiment-analysis">API |</a>
-					<Link to ="/pastmoods"> Mood Swings</Link>
+					<a className="nav-text" href="https://deepai.org/api-docs/#sentiment-analysis">API |</a>
+					<Link to ="/pastmoods" className="nav-text"> Mood Swings</Link>
 				</div>
 				<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 				<Emotion emotionInput={this.state.apiOutput} ref={this.child} />
@@ -78,7 +78,7 @@ class Home extends Component {
 				<form className="home-form" onSubmit={this.handleSubmit}>
 				  <label>
 				  	<br/>
-				    <p>What's on your mind?</p>
+				    <p className="prompt">What's on your mind?</p>
 				    <input type="text" value={this.state.userInput} name="name" onChange={this.handleChange}/>
 				  </label>
 				  <input className="inputButton" type="submit" value="Submit" />
