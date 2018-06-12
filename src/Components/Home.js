@@ -67,7 +67,7 @@ class Home extends Component {
 		return(
 
 			<div>
-				<h1 className="mood-title">Mood Checker</h1>
+				<h1 className="mood-title"><a href="">Mood Checker</a></h1>
 				<div className="nav-bar">
 					<a className="nav-text" href="https://deepai.org/api-docs/#sentiment-analysis">API |</a>
 					<Link to ="/pastmoods" className="nav-text"> Mood Swings</Link>
