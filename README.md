@@ -23,3 +23,5 @@ Later implemented as a microservice alongside another DeepAI API, an auto-colori
 * The app will function as a standalone React app, however, you can utitlize the back end [here](https://github.com/hanizahra/Mood-Checker-Back-End-Spring)
 
 ## Preview
+![Screenshot of Happy](/public/happy.png "Screenshot")![Screenshot of Neutral](/public/neutral.png "Screenshot")
+![Screenshot of Angry](/public/angry.png "Screenshot")![Screenshot of Furious](/public/furious.png "Screenshot")
